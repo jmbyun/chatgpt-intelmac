@@ -9,10 +9,11 @@
     "patch-info": "node scripts/patch-info-plist.js",
     "build:icon": "node scripts/generate-icon.js",
     "ensure-python": "node scripts/ensure-python-shim.js",
+    "rename-intel-artifacts": "node scripts/rename-intel-artifacts.js",
     "postinstall": "npm run patch-info",
     "dist": "npm run build:icon && npm run patch-info && npm run ensure-python && SHIM=\"$PWD/scripts/.bin/python\" && PATH=\"$PWD/scripts/.bin:$PATH\" && PYTHON=\"$SHIM\" && npm_config_python=\"$SHIM\" && electron-builder",
     "pack": "npm run build:icon && npm run patch-info && npm run ensure-python && SHIM=\"$PWD/scripts/.bin/python\" && PATH=\"$PWD/scripts/.bin:$PATH\" && PYTHON=\"$SHIM\" && npm_config_python=\"$SHIM\" && electron-builder --dir",
-    "dist-intel": "npm run build:icon && npm run patch-info && npm run ensure-python && SHIM=\"$PWD/scripts/.bin/python\" && PATH=\"$PWD/scripts/.bin:$PATH\" && PYTHON=\"$SHIM\" && npm_config_python=\"$SHIM\" && electron-builder --mac --x64"
+    "dist-intel": "npm run build:icon && npm run patch-info && npm run ensure-python && SHIM=\"$PWD/scripts/.bin/python\" && PATH=\"$PWD/scripts/.bin:$PATH\" && PYTHON=\"$SHIM\" && npm_config_python=\"$SHIM\" && electron-builder --mac --x64 && npm run rename-intel-artifacts"
   },
   "keywords": [],
   "author": "",
