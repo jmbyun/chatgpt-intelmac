@@ -1,0 +1,65 @@
+{
+  "name": "chatgpt-intelmac",
+  "version": "1.0.0",
+  "description": "Minimal Electron wrapper that opens chatgpt.com",
+  "productName": "ChatGPT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "patch-info": "node scripts/patch-info-plist.js",
+    "build:icon": "node scripts/generate-icon.js",
+    "ensure-python": "node scripts/ensure-python-shim.js",
+    "postinstall": "npm run patch-info",
+    "dist": "npm run build:icon && npm run patch-info && npm run ensure-python && SHIM=\"$PWD/scripts/.bin/python\" && PATH=\"$PWD/scripts/.bin:$PATH\" && PYTHON=\"$SHIM\" && npm_config_python=\"$SHIM\" && electron-builder",
+    "pack": "npm run build:icon && npm run patch-info && npm run ensure-python && SHIM=\"$PWD/scripts/.bin/python\" && PATH=\"$PWD/scripts/.bin:$PATH\" && PYTHON=\"$SHIM\" && npm_config_python=\"$SHIM\" && electron-builder --dir",
+    "dist-intel": "npm run build:icon && npm run patch-info && npm run ensure-python && SHIM=\"$PWD/scripts/.bin/python\" && PATH=\"$PWD/scripts/.bin:$PATH\" && PYTHON=\"$SHIM\" && npm_config_python=\"$SHIM\" && electron-builder --mac --x64"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^39.1.2",
+    "electron-builder": "^26.0.12",
+    "plist": "^3.1.0",
+    "png2icons": "^2.0.1"
+  },
+  "build": {
+    "appId": "com.jeongmin.chatgpt",
+    "productName": "ChatGPT",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "assets/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "build/icon.icns",
+      "darkModeSupport": true
+    },
+    "dmg": {
+      "backgroundColor": "#eeeeee",
+      "icon": "build/icon.icns",
+      "sign": false,
+      "contents": [
+        {
+          "x": 130,
+          "y": 220,
+          "type": "file"
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
+}

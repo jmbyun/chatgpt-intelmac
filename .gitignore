@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+.npm-cache/
+
+# Builds & dist
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
+
+# Misc
+scripts/.bin/
