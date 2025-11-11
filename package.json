@@ -42,7 +42,8 @@
         "zip"
       ],
       "icon": "build/icon.icns",
-      "darkModeSupport": true
+      "darkModeSupport": true,
+      "identity": "Apple Development: jmbyun91+us@gmail.com (CYTWYSZX7Y)"
     },
     "dmg": {
       "backgroundColor": "#eeeeee",

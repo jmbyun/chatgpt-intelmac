@@ -56,6 +56,15 @@ All packaging scripts run `build:icon`, `patch-info`, and `ensure-python` automa
 
 If you plan to distribute the DMG publicly, codesign + notarize the output in the usual macOS way (not covered here).
 
+### Code signing identity
+
+All builds default to the signing identity `Apple Development: jmbyun91+us@gmail.com (CYTWYSZX7Y)` (configured in `package.json` and the GitHub Actions workflow). If you need to override it locally, run:
+
+```bash
+CSC_IDENTITY_AUTO_DISCOVERY=false \
+CSC_NAME="Apple Development: jmbyun91+us@gmail.com (CYTWYSZX7Y)" \
+npm run dist
+```
 ## Troubleshooting
 
 - **Electron crashes when run headless**: `npm start` must run inside a logged-in macOS GUI session. Headless terminals can’t display the window.

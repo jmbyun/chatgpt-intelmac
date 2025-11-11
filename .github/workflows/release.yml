@@ -11,6 +11,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      CSC_NAME: Apple Development: jmbyun91+us@gmail.com (CYTWYSZX7Y)
     steps:
       - name: Checkout
         uses: actions/checkout@v4
