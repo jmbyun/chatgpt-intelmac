@@ -8,6 +8,9 @@ on:
 jobs:
   dist-intel:
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: chatgpt-electron
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -23,6 +26,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: chatgpt-electron/package-lock.json
 
       - name: Install dependencies
         run: npm install
@@ -34,5 +38,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ChatGPT-intel-dmg
-          path: dist/*-x86_64.dmg
+          path: chatgpt-electron/dist/*-x86_64.dmg
           if-no-files-found: error

@@ -1,0 +1,250 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Fixed Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    padding: 12px 0;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.logo svg {
+    width: 24px;
+    height: 24px;
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: opacity 0.2s;
+}
+
+.nav a:hover {
+    opacity: 0.7;
+}
+
+.cta-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #e6e6e6;
+}
+
+/* Main Content */
+.main-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px 40px;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Image Column */
+.image-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-column img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Text Column */
+.text-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.text-column h1 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 400px;
+}
+
+/* Download Buttons */
+.download-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none !important;
+}
+
+.download-btn:hover {
+    background-color: #e6e6e6;
+}
+
+.download-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Links */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.links a:hover {
+    color: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0 20px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .main-content {
+        padding: 80px 20px 40px;
+    }
+
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* Mobile: Text column first, then image */
+    .text-column {
+        order: 1;
+    }
+
+    .image-column {
+        order: 2;
+    }
+
+    .text-column h1 {
+        font-size: 48px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .image-column img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-column h1 {
+        font-size: 36px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
