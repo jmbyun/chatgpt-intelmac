@@ -1,6 +1,8 @@
-﻿# ChatGPT Desktop Wrapper
+﻿# ChatGPT Desktop App for Intel Mac
 
-> For all the stingy devs who can only afford ancient Intel Macs right now — just like myself — here’s your ticket to a snappy ChatGPT desktop app without the hardware FOMO.
+> Vive-coded with Codex+GPT5. Of course the readme file is also from the GPT5. Let's see what it says:
+
+For all the stingy devs who can only afford ancient Intel Macs right now — just like myself — here’s your ticket to a snappy ChatGPT desktop app without the hardware FOMO.
 
 This repo bundles a minimal Electron shell around [chatgpt.com](https://chatgpt.com/). It boots straight into the web experience, keeps your session alive between restarts, grants voice mode the permissions it needs, and ships with a proper app icon so it feels native on macOS.
 
