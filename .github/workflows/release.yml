@@ -11,7 +11,9 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CSC_NAME: Apple Development: jmbyun91+us@gmail.com (CYTWYSZX7Y)
+      CSC_NAME: Apple Distribution: JEONG MIN BYUN (77F8PE7GRC)
+      CSC_LINK: ${{ secrets.CSC_LINK }}
+      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

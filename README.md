@@ -58,11 +58,11 @@ If you plan to distribute the DMG publicly, codesign + notarize the output in th
 
 ### Code signing identity
 
-All builds default to the signing identity `Apple Development: jmbyun91+us@gmail.com (CYTWYSZX7Y)` (configured in `package.json` and the GitHub Actions workflow). If you need to override it locally, run:
+All builds default to the signing identity `Apple Distribution: JEONG MIN BYUN (77F8PE7GRC)` (configured in `package.json` and the GitHub Actions workflow). If you need to override it locally, run:
 
 ```bash
 CSC_IDENTITY_AUTO_DISCOVERY=false \
-CSC_NAME="Apple Development: jmbyun91+us@gmail.com (CYTWYSZX7Y)" \
+CSC_NAME="Apple Distribution: JEONG MIN BYUN (77F8PE7GRC)" \
 npm run dist
 ```
 ## Troubleshooting
